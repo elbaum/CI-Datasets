@@ -63,46 +63,68 @@ The first paper using this dataset was "Redefining Prioritization: Continuous Pr
 
 # Data Fields
 
+ Field   | Description                                 
+
+ Test Suite  | String representing the test sutie name including the test suite directory(names separated by "/").
+
+ Test Suite Duration | Number representing the test suite execution time in second.
+ 
+ Test Suite Runs     | Integer representing the number of test cases executions.
+ 
+ Test Suite Assersions | Integer representing the number of assertions in the test suite.
+ 
+ Test Suite Failures | Integer representing the number of failed test cases in the test suite.                           
+ 
+ Test Suite Errors   | Integer representing the number of errored test cases in the test suite.
+ 
+ Test Suite Skips    | Integer representing the number of skipped test cases in the test suite.
+ 
+ Build Number        | Integer representing the number of build that the test suite belong to.
+ 
+ Commit Sha          | String representing the unique object committed. Commit sha is a string with 40 characters.
+ 
+ Job Id              | Integer representing the id of the job that the test suite belong to.
+ 
+ Job Number          | Number representing the number of the job that the test suite belong to. 
+ 
+ Commit Branch       | String representing the branch that the commit is commited to.
+ 
+ Build State         | String representing build execution status including failed, and passed.
+ 
+ Build Start Time    | String representing the time when the build started to execute.
+ 
+ Build Finish Time   | String representing the time when the build finished executing.
+ 
+ Build Duration      | Number representing the wall clock of the whole build time in second, including the building time, 
+ and testing time.
+ 
+ Job State           | String representing the job's execution status including passed, failed, errored.
+ 
+ Job Start Time      | String representing the time when the job started to execute.
+ 
+ Job Finish Time     | String representing the time when the job finished executing.
+ 
+ Job Duration        | Number representing the wall clock of the whole job time in second.
+ 
+ Job Allow Failure   | Boolean representing whether the job is set "allow failure".
+ 
+ Build Pull Request  | Boolean representing whether the build is pull request or not.
+ 
+ Test Suite Order in the Job     | Integer representing the order of test suite in the certain job.
 
 
-
-+---------------------+---------------------------------------------------------------------------------------------------+
-| Field               | Description                                 
-+---------------------+---------------------------------------------------------------------------------------------------+
-| Test Suite          | String representing the test sutie name including the test suite directory(names separated by "/").
-| Test Suite Duration | Number representing the test suite execution time in second.
-| Test Suite Runs     | Integer representing the number of test cases executions.
-| Test Suite Assersions | Integer representing the number of assertions in the test suite.
-| Test Suite Failures | Integer representing the number of failed test cases in the test suite.                           
-| Test Suite Errors   | Integer representing the number of errored test cases in the test suite.
-| Test Suite Skips    | Integer representing the number of skipped test cases in the test suite.
-| Build Number        | Integer representing the number of build that the test suite belong to.
-| Commit Sha          | String representing the unique object committed. Commit sha is a string with 40 characters.
-| Job Id              | Integer representing the id of the job that the test suite belong to.
-| Job Number          | Number representing the number of the job that the test suite belong to. 
-| Commit Branch       | String representing the branch that the commit is commited to.
-| Build State         | String representing build execution status including failed, and passed.
-| Build Start Time    | String representing the time when the build started to execute.
-| Build Finish Time   | String representing the time when the build finished executing.
-| Build Duration      | Number representing the wall clock of the whole build time in second, including the building time, |                     | and testing time.
-| Job State           | String representing the job's execution status including failed, errored, and passed.
-| Job Start Time      | String representing the time when the job started to execute.
-| Job Finish Time     | String representing the time when the job finished executing.
-| Job Duration        | Number representing the wall clock of the whole job time in second.
-| Job Allow Failure   | Boolean representing whether the job is set "allow failure".
-| Build Pull Request  | Boolean representing whether the build is pull request or not.
-| Ts_order_in_job     | Integer representing the order of test suite in the certain job.
-+-------------------------------------------------------------------------------------------------------------------------+
 
 
 
 Note:
 
+1. Relationships between BUILD, JOB, TEST SUITE
 
-1. Details about relation between BUILD, JOB, TEST SUITE
-2. Details about "allow failure"
+   Each build contains multiple jobs, and each job will execute multiple test suites.
 
-Job Number: Number representing the number of the job that the test suite belong to. For example, 33391.1 is a job number. 			   This number is consisted as below:
+2. "Allow Failure" is a boolean variable for each job. If the job is set "Allow Failure = true", then even the job contains some failed test suite executions, the job is still passed.
+
+3. Job Number: Number representing the number of the job that the test suite belong to. For example, 33391.1 is a job number. This number is consisted as below:
 			33391 (build number) + "." + 1 (job number)
 
 
