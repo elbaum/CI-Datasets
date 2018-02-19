@@ -1,13 +1,24 @@
 # CI-Datasets
 Continuous integration testing dataset
 
+## Rails Dataset
 This dataset is gathered from rails/rails of Travis CI (https://travis-ci.org/rails/rails/). Rails is an open source project writen in Ruby, and it has more than 50,000 builds on Travis CI. From that pool of builds, we collected 3000 consecutive builds from March 2016 to August 2016. After removing the 196 cancled builds, the dataset ended up with 2804 builds with more than 3.5 million test suite execution records.
-
-"Summary Dataset" provides details on mtivation, context, and process to get the data. "Data Fields" provides details on the data fields. A list of efforts using the dataset can be found in "Papers and tools".
 
 If you use it please:
 
 Cite it as: Jingjing Liang, Sebastian Elbaum, and Gregg Rothermel, "The Rails Dataset of Testing Results from Travis CI", https://github.com/elbaum/CI-Datasets, 2018.
+
+## Google Dataset
+This dataset is gathered from Google products with more than 3.3 Million test suite execution records. The dataset collected 15 consecutive days' data.
+
+If you use it please:
+
+Cite it as: Sebastian Elbaum, Andrew Mclaughlin, and John Penix, "The Google Dataset of Testing Results", https://github.com/elbaum/CI-Datasets, 2018.
+
+
+"Summary Dataset" provides details on mtivation, context, and process to get the data. "Data Fields" provides details on the data fields. A list of efforts using the dataset can be found in "Papers and tools".
+
+
 
 
 # Summary Dataset
