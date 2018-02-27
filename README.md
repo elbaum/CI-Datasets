@@ -1,68 +1,34 @@
 # Continuous Integration Testing Datasets
  
-This repository contains continue integration testing datasets to support the design and implementation of more effective and efficient testing and analysis techniques that can operate at large scale and speed. 
- 
-### Rails Dataset
-This dataset is gathered from the system rails/rails hosted on Travis CI (https://travis-ci.org/rails/rails/). Rails is an open source project writen in Ruby, with more than 50,000 builds on Travis CI. From that pool of builds, we collected 3000 consecutive builds from March 2016 to August 2016. We removed 196 canceled builds, ending with 2804 builds that include more than 3.5 million test suite execution records.
-
-If you use this dataset please cite:
-
-Jingjing Liang, Sebastian Elbaum, and Gregg Rothermel, "The Rails Dataset of Testing Results from Travis CI", https://github.com/elbaum/CI-Datasets, 2018.
-
-### Google Dataset
-This dataset is gathered from Google products and includes more than 3.3 Million test suite execution records. The dataset contains anonymized data collected on 15 consecutive days on a subset of Google products.
-
-If you use this dataset please cite:
-
-Cite it as: Sebastian Elbaum, Andrew Mclaughlin, and John Penix, "The Google Dataset of Testing Results", https://github.com/elbaum/CI-Datasets, 2018.
-
-
-
-
-
-
-
-# Summary Dataset
-
-## Motivation and Goals
-
-The dataset is meant to provide the software engineering research community, especially the software testing and analysis community, with a sample of test suite execution results from a fast, large scale, and continuous testing infrastructure. 
-
-
-## Context
-
-### Rails Dataset
-Rails is an open source project with frequent builds on Travis CI. Rails project is writen in Ruby with more than 50,000 builds. This dataset collects 2804 consecutive builds in total with a sample of more than 3.5 million test sutie executions over five months ( March 2016 to August 2016). For each test suite, the dataset includes rich information such as test suite identifiers, test suite execution time, job, and build identifiers, start times, finish times and outcome status.
-
-### Google Dataset
-Google conducts many quality assurance activities at many levels. This dataset reflects one activity type, and a small sample on that type. Still, the dataset includes a sample of over 3.3 Million test suite (note that these are not test cases) executions, collected during a period of of 15 days over a sample of Google products. For each test suite execution, the dataset includes rich information such as the status outcome, execution time, rescaled change request number, and the language used.
-
-
-## Potential Usages
+This repository contains continue integration testing datasets to support the software testing and analysis community in the design and implementation of more effective and efficient testing and analysis techniques that can operate at large scale and speed. 
 
 We anticipate that this dataset could be used for: 
 1. Analyze continuous, and large scale testing processes. 
 2. Develop predictive models to increase test performance.
 3. Assess and refine tests scheduling and selection techniques.
 
-
-## Format
+ 
+### Rails Dataset
+This dataset is gathered from the system rails/rails hosted on Travis CI (https://travis-ci.org/rails/rails/). Rails is an open source project writen in Ruby, with more than 50,000 builds on Travis CI. From that pool of builds, we collected 3000 consecutive builds from March 2016 to August 2016. We removed 196 canceled builds, ending with 2804 builds that include more than 3.5 million test suite execution records. For each test suite, the dataset includes rich information such as test suite identifiers, test suite execution time, job, and build identifiers, start times, finish times and outcome status.
 
 The Rails dataset file is compressed using zip. The fields in the file are colon-separated, and the fields' decription is in the DataFields.
 
+If you use this dataset please cite:
+Jingjing Liang, Sebastian Elbaum, and Gregg Rothermel, "The Rails Dataset of Testing Results from Travis CI", https://github.com/elbaum/CI-Datasets, 2018.
+
+### Google Dataset
+Google conducts many quality assurance activities at many levels. This dataset reflects one activity type, and a small sample on that type. Still, the dataset includes a sample of over 3.3 Million test suite (note that these are not test cases) executions, collected during a period of of 15 days over a sample of Google products. For each test suite execution, the dataset includes rich information such as the status outcome, execution time, rescaled change request number, and the language used.
+
 The Google dataset file is compressed using tar.bz2. The fields in the file are comma-separated, and the fields' description is in the DataFields.
 
-
+If you use this dataset please cite:
+Cite it as: Sebastian Elbaum, Andrew Mclaughlin, and John Penix, "The Google Dataset of Testing Results", https://github.com/elbaum/CI-Datasets, 2018.
+ 
 ## Rights and licences
 
 The dataset will be made freely available without restrictions.
 
-
-## Questions
-
-If you have questions, please direct them to: Jingjing Liang
-
-
+ 
 ## Authors
 
 The Rails dataset was prepared through a collaborative effort involving Jingjing Liang, Sebastian Elbaum and Gregg Rothermel.
