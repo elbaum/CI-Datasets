@@ -1,7 +1,7 @@
 # Continuous Integration Testing Datasets
  
-"Summary Dataset" provides details on the motivation, context, and process to get the data. "Data Fields" provides details on the data included as part of each dataset. A list of efforts using the dataset can be found under "Papers and Tools".
-
+This repository contains continue integration testing datasets to support the design and implementation of more effective and efficient testing and analysis techniques that can operate at large scale and speed. 
+ 
 ### Rails Dataset
 This dataset is gathered from the system rails/rails hosted on Travis CI (https://travis-ci.org/rails/rails/). Rails is an open source project writen in Ruby, with more than 50,000 builds on Travis CI. From that pool of builds, we collected 3000 consecutive builds from March 2016 to August 2016. We removed 196 canceled builds, ending with 2804 builds that include more than 3.5 million test suite execution records.
 
