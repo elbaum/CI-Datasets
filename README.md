@@ -16,6 +16,8 @@ The Rails dataset file is compressed using zip. The fields in the file are colon
 If you use this dataset please cite:
 Jingjing Liang, Sebastian Elbaum, and Gregg Rothermel, "The Rails Dataset of Testing Results from Travis CI", https://github.com/elbaum/CI-Datasets, 2018.
 
+The Rails dataset was prepared through a collaborative effort involving Jingjing Liang, Sebastian Elbaum and Gregg Rothermel.
+
 ### Google Dataset
 Google conducts many quality assurance activities at many levels. This dataset reflects one activity type, and a small sample on that type. Still, the dataset includes a sample of over 3.3 Million test suite (note that these are not test cases) executions, collected during a period of of 15 days over a sample of Google products. For each test suite execution, the dataset includes rich information such as the status outcome, execution time, rescaled change request number, and the language used.
 
@@ -23,18 +25,14 @@ The Google dataset file is compressed using tar.bz2. The fields in the file are 
 
 If you use this dataset please cite:
 Cite it as: Sebastian Elbaum, Andrew Mclaughlin, and John Penix, "The Google Dataset of Testing Results", https://github.com/elbaum/CI-Datasets, 2018.
+
+The Google dataset was prepared through a collaborative effort involving Sebastian Elbaum (Google Visiting Scientist from the University of Nebraska Lincoln), and Andrew Mclaughlin and John Penix (engineers at Google).
+
  
 ## Rights and licences
 
 The dataset will be made freely available without restrictions.
-
  
-## Authors
-
-The Rails dataset was prepared through a collaborative effort involving Jingjing Liang, Sebastian Elbaum and Gregg Rothermel.
-
-The Google dataset was prepared through a collaborative effort involving Sebastian Elbaum (Google Visiting Scientist from the University of Nebraska Lincoln), and Andrew Mclaughlin and John Penix (engineers at Google).
-
 
 # Papers and tools
 
@@ -66,11 +64,11 @@ The second paper to use the dataset was "Redefining Prioritization: Continuous P
 
  Test Suite  | String representing the test sutie name including the test suite directory(names separated by "/").
 
- Test Suite Duration | Number representing the test suite execution time in second.
+ Test Suite Duration | Number representing the test suite execution time in seconds.
  
- Test Suite Runs     | Integer representing the number of test cases executions.
+ Test Suite Runs     | Integer representing the number of test suites executions.
  
- Test Suite Assersions | Integer representing the number of assertions in the test suite.
+ Test Suite Assertions | Integer representing the number of assertions in the test suite.
  
  Test Suite Failures | Integer representing the number of failed test cases in the test suite.                           
  
@@ -78,7 +76,7 @@ The second paper to use the dataset was "Redefining Prioritization: Continuous P
  
  Test Suite Skips    | Integer representing the number of skipped test cases in the test suite.
  
- Build Number        | Integer representing the number of build that the test suite belong to.
+ Build Number        | Integer representing the number of build that a test suite belongs to.
  
  Commit Sha          | String representing the unique object committed. Commit sha is a string with 40 characters.
  
@@ -94,7 +92,7 @@ The second paper to use the dataset was "Redefining Prioritization: Continuous P
  
  Build Finish Time   | String representing the time when the build finished executing.
  
- Build Duration      | Number representing the wall clock of the whole build time in second, including the building time, 
+ Build Duration      | Number representing the wall clock of the whole build time in seconds, including the building time, 
  and testing time.
  
  Job State           | String representing the job's execution status including passed, failed, errored.
@@ -107,28 +105,24 @@ The second paper to use the dataset was "Redefining Prioritization: Continuous P
  
  Job Allow Failure   | Boolean representing whether the job is set "allow failure".
  
- Build Pull Request  | Boolean representing whether the build is pull request or not.
+ Build Pull Request  | Boolean representing whether the build is a pull request or not.
  
- Test Suite Order in the Job     | Integer representing the order of test suite in the certain job.
+ Test Suite Order in the Job     | Integer representing the   test suite order within a job.
 
 
 
-Note:
+Notes:
 
-1. Relationships between BUILD, JOB, TEST SUITE
+1. Relationship between BUILD, JOB, TEST SUITE: each build contains multiple jobs, and each job will execute multiple test suites.
 
-   Each build contains multiple jobs, and each job will execute multiple test suites.
+2. "Allow Failure" is a boolean variable for each job. If the job is set "Allow Failure = true", then even if the job contains some failed test suite executions, the job is still marked as Passed by Travis.
 
-2. "Allow Failure" is a boolean variable for each job. If the job is set "Allow Failure = true", then even the job contains some failed test suite executions, the job is still passed.
-
-3. Job Number: Number representing the number of the job that the test suite belong to. For example, 33391.1 is a job number. This number is consisted as below:
-			33391 (build number) + "." + 1 (job number)
+3. Job number includes build number and the specific job separated by a period. So, for example "33391.1" consists of 	33391 (build number) + "." + 1 (job number)
 
 
 
 ### Google Dataset 
 
-Field   | Description 
 
 Test Suite | String representing the test suite name. The names have been obfuscated but most of the directory structure (names separated by “/”) has been retained. 
 
