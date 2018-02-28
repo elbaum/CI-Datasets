@@ -42,15 +42,21 @@ ICSE 2018
 
 The first paper using this dataset was "Redefining Prioritization: Continuous Prioritization for Continuous Integration", by Jingjing Liang, Sebastian Elbaum, and Gregg Rothermel, ICSE 2018.
 
+Link: https://www.icse2018.org/event/icse-2018-technical-papers-redefining-prioritization-continuous-prioritization-for-continuous-integration
+
 ### Google Dataset
 
 FSE 2014
 
 The first paper to use the dataset was "Techniques for Improving Regression Testing in Continuous Integration Development Environments", by Sebastian Elbaum, Gregg Rothermel, and John Penix, FSE 2014.
 
+Link: http://cse.unl.edu/~elbaum/pre-prints/fse2014-prePrint.pdf
+
 ICSE 2018
 
 The second paper to use the dataset was "Redefining Prioritization: Continuous Prioritization for Continuous Integration", by Jingjing Liang, Sebastian Elbaum, and Gregg Rothermel, ICSE 2018.
+
+Link: https://www.icse2018.org/event/icse-2018-technical-papers-redefining-prioritization-continuous-prioritization-for-continuous-integration
 
 
 
