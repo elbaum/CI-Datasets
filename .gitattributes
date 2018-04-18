@@ -1,0 +1,4 @@
+.bz2 filter=lfs diff=lfs merge=lfs -text
+.tar.bz2 filter=lfs diff=lfs merge=lfs -text
+*.tar.bz2 filter=lfs diff=lfs merge=lfs -text
+RailsCleanData.out.zip filter=lfs diff=lfs merge=lfs -text
