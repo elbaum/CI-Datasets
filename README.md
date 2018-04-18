@@ -116,8 +116,6 @@ Notes:
 
 2. "Allow Failure" is a boolean variable for each job. If the job is set "Allow Failure = true", then even if the job contains some failed test suite executions, the job is still assumed as Passed by Travis.
 
-3. Job number includes build number and the specific job separated by a period. So, for example "33391.1" consists of 	33391 (build number) + "." + 1 (job number)
-
 
 
 ### Google Dataset
