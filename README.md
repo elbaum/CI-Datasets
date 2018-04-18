@@ -11,7 +11,7 @@ We anticipate that this dataset could be used for:
 ### Rails Dataset
 This dataset is gathered from the system rails/rails hosted on Travis CI (https://travis-ci.org/rails/rails/). Rails is an open source project writen in Ruby, with more than 50,000 builds on Travis CI. From that pool of builds, we collected 3000 consecutive builds from March 2016 to August 2016. We removed 196 canceled builds, ending with 2804 builds that include more than 3.5 million test suite execution records. For each test suite, the dataset includes rich information such as test suite identifiers, test suite execution time, job, and build identifiers, start times, finish times and outcome status.
 
-The Rails dataset file is compressed using zip. The fields in the file are colon-separated, and the fields' decription is in the DataFields.
+The Rails dataset file is compressed using zip. The fields in the file are semicolon-separated, and the fields' decription is in the DataFields.
 
 If you use this dataset please cite:
 Jingjing Liang, Sebastian Elbaum, and Gregg Rothermel, "The Rails Dataset of Testing Results from Travis CI", https://github.com/elbaum/CI-Datasets, 2018.
@@ -19,9 +19,9 @@ Jingjing Liang, Sebastian Elbaum, and Gregg Rothermel, "The Rails Dataset of Tes
 The Rails dataset was prepared through a collaborative effort involving Jingjing Liang, Sebastian Elbaum and Gregg Rothermel.
 
 ### Google Dataset
-Google conducts many quality assurance activities at many levels. This dataset reflects one activity type, and a small sample on that type. Still, the dataset includes a sample of over 3.3 Million test suite (note that these are not test cases) executions, collected during a period of of 15 days over a sample of Google products. For each test suite execution, the dataset includes rich information such as the status outcome, execution time, rescaled change request number, and the language used.
+Google conducts many quality assurance activities at many levels. This dataset reflects one activity type, and a small sample on that type. Still, the clean dataset includes a sample of over 2.5 Million test suite (note that these are not test cases) executions, collected during a period of of 15 days over a sample of Google products. For each test suite execution, the dataset includes rich information such as the status outcome, execution time, rescaled change request number, and the language used. For continuous integration usage, we separate this dataset into two subdatasets, Google Pre and Google Post, according to test suites' execution "stage" ("pre" and "post").
 
-The Google dataset file is compressed using tar.bz2. The fields in the file are comma-separated, and the fields' description is in the DataFields.
+These Google datasets files are compressed using zip. The fields in the file are comma-separated, and the fields' description is in the DataFields.
 
 If you use this dataset please cite:
 Cite it as: Sebastian Elbaum, Andrew Mclaughlin, and John Penix, "The Google Dataset of Testing Results", https://github.com/elbaum/CI-Datasets, 2018.
@@ -50,7 +50,7 @@ FSE 2014
 
 The first paper to use the dataset was "Techniques for Improving Regression Testing in Continuous Integration Development Environments", by Sebastian Elbaum, Gregg Rothermel, and John Penix, FSE 2014.
 
-Link: http://cse.unl.edu/~elbaum/pre-prints/fse2014-prePrint.pdf
+Link: https://dl.acm.org/citation.cfm?id=2635910
 
 ICSE 2018
 
@@ -70,6 +70,8 @@ Link: https://www.icse2018.org/event/icse-2018-technical-papers-redefining-prior
 
  Test Suite  | String representing the test sutie name including the test suite directory(names separated by "/").
 
+ Test Suite Start Time | String representing the time when the test suite started to execute.
+
  Test Suite Duration | Number representing the test suite execution time in seconds.
  
  Test Suite Runs     | Integer representing the number of test suites executions.
@@ -83,15 +85,11 @@ Link: https://www.icse2018.org/event/icse-2018-technical-papers-redefining-prior
  Test Suite Skips    | Integer representing the number of skipped test cases in the test suite.
  
  Build Number        | Integer representing the number of build that a test suite belongs to.
+
+ Build Pull Request | Boolean representing whether the build is a pull request or not.
  
  Commit Sha          | String representing the unique object committed. Commit sha is a string with 40 characters.
- 
- Job Id              | Integer representing the id of the job that the test suite belong to.
- 
- Job Number          | Number representing the number of the job that the test suite belong to. 
- 
- Commit Branch       | String representing the branch that the commit is commited to.
- 
+
  Build State         | String representing build execution status including failed, and passed.
  
  Build Start Time    | String representing the time when the build started to execute.
@@ -101,19 +99,14 @@ Link: https://www.icse2018.org/event/icse-2018-technical-papers-redefining-prior
  Build Duration      | Number representing the wall clock of the whole build time in seconds, including the building time, 
  and testing time.
  
- Job State           | String representing the job's execution status including passed, failed, errored.
+ Job Id              | Integer representing the id of the job that the test suite belong to.
  
  Job Start Time      | String representing the time when the job started to execute.
- 
- Job Finish Time     | String representing the time when the job finished executing.
- 
- Job Duration        | Number representing the wall clock of the whole job time in second.
- 
+
  Job Allow Failure   | Boolean representing whether the job is set "allow failure".
+
+
  
- Build Pull Request  | Boolean representing whether the build is a pull request or not.
- 
- Test Suite Order in the Job     | Integer representing the   test suite order within a job.
 
 
 
@@ -121,13 +114,13 @@ Notes:
 
 1. Relationship between BUILD, JOB, TEST SUITE: each build contains multiple jobs, and each job will execute multiple test suites.
 
-2. "Allow Failure" is a boolean variable for each job. If the job is set "Allow Failure = true", then even if the job contains some failed test suite executions, the job is still marked as Passed by Travis.
+2. "Allow Failure" is a boolean variable for each job. If the job is set "Allow Failure = true", then even if the job contains some failed test suite executions, the job is still assumed as Passed by Travis.
 
 3. Job number includes build number and the specific job separated by a period. So, for example "33391.1" consists of 	33391 (build number) + "." + 1 (job number)
 
 
 
-### Google Dataset 
+### Google Dataset
 
 
 Test Suite | String representing the test suite name. The names have been obfuscated but most of the directory structure (names separated by “/”) has been retained. 
